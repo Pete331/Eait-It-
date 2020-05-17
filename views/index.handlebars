@@ -1,6 +1,31 @@
+<img src="/assets/img/burger.png" alt="burger_img">
+<div class="container">
+    <h1 class="text-danger text-center pb-3">Eat-Da-Burger!</h1>
+    <div class="row">
+        <div class="col">
+            {{#each burger}}
+            {{#unless devoured}}
+            {{> burgers/burger-block devoured=0}}
+            {{/unless}}
+            {{/each}}
+        </div>
+        <div class="col">
+            {{#each burger}}
+            {{#if devoured}}
+            {{> burgers/burger-block devoured=1}}
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
 
-
-
+    <form class="create-form text-center p-5">
+        <div class="form-group">
+            <input type="text" id="burger_input_text" name="name">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <p>Enter a burger you want to eat and click the "Submit" Button</p>
+    </form>
+</div>
 
 
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto.
