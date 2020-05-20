@@ -2,6 +2,7 @@ const mysql = require("mysql");
 
 let connection;
 
+// JAWSDB used to host sql server on heroku, if the environment is website uses jaws db otherwise local server
 if (process.env.JAWSDB_URL){
   connection = mysql.createConnection(process.env.JAWSDB_URL)
 } else {

@@ -1,7 +1,6 @@
 const express = require("express");
 const burger = require("../models/burger");
 
-// Create the router for the app, and export the router at the end of your file.
 var router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
@@ -15,7 +14,6 @@ router.get("/", function (req, res) {
 router.post("/api/burgers", function (req, res) {
   burger.create(["burger_name"], [req.body.name], function (result) {
     console.log(result);
-    // Send back the ID of the new quote
     res.status(200).end();
   });
 });
